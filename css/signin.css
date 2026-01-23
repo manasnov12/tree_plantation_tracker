@@ -1,0 +1,4 @@
+/* signin.css is not needed as we are reusing login.css for consistency. 
+   Keeping this file content minimal or redirecting to avoid 404s if referenced elsewhere 
+   but ideally we should update references. */
+@import url('login.css');

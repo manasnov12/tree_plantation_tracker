@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plantation Tracker | Grow a Greener Future</title>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="js/main.js" defer></script>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="logo-container">
+      <img src="assets/logo.png" alt="Plantation Tracker Logo" class="logo-img">
+      <span>Plantation Tracker</span>
+    </div>
+    <div class="nav-links">
+      <a href="#" class="active">Home</a>
+      <a href="#ABOUT">About Us</a>
+      <a href="#SERVICES">Services</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="nav-actions">
+      <a href="login.html" class="btn btn-secondary btn-sm">Login</a>
+      <div class="menu-toggle" id="mobile-menu">
+        <span class="material-icons">menu</span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="hero-content">
+      <h1><span class="highlight">Plants</span> Make A Positive <span class="highlight">Impact</span></h1>
+      <p>Discover the vital role plants play in our ecosystem. Monitor your contribution, track growth, and join a
+        community dedicated to a greener future.</p>
+      <div class="hero-buttons">
+        <a href="chatbot.html"><button class="btn btn-primary">Chat With Us</button></a>
+        <a href="dashboard.html"><button class="btn btn-secondary">Dashboard</button></a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src="assets/plant.png" alt="Healthy Plant" class="floating-plant">
+    </div>
+  </header>
+
+  <!-- Features Section -->
+  <section class="features-section">
+    <div class="feature-card">
+      <div class="icon-box">
+        <img src="assets/deliviry-removebg-preview.png" alt="Fast Delivery">
+      </div>
+      <h4>Fast Delivery</h4>
+      <p>Quick and safe delivery of saplings to your doorstep.</p>
+    </div>
+    <div class="feature-card">
+      <div class="icon-box">
+        <img src="assets/headphone-removebg-preview.png" alt="Support">
+      </div>
+      <h4>24/7 Support</h4>
+      <p>Expert guidance for your plantation journey.</p>
+    </div>
+    <div class="feature-card">
+      <div class="icon-box">
+        <img src="assets/pngtree.png" alt="Original Plants">
+      </div>
+      <h4>Original Plants</h4>
+      <p>Certified organic and healthy plants guarantee.</p>
+    </div>
+    <div class="feature-card">
+      <div class="icon-box">
+        <img src="assets/rupee-removebg-preview.png" alt="Affordable">
+      </div>
+      <h4>Affordable</h4>
+      <p>Best prices for high-quality saplings.</p>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about-section" id="ABOUT">
+    <div class="container flex-between">
+      <div class="about-image">
+        <img src="assets/paade-removebg-preview.png" alt="Planting Trees">
+      </div>
+      <div class="about-text">
+        <h2>About <span class="highlight-text">Us</span></h2>
+        <p>We believe in action, not just words. Every sapling we plant is a step towards a better tomorrow. We aim to
+          ignite a passion for nature in the next generation making planting trees easy and trackable.</p>
+        <p>Join a community where your actions truly matter. We're using technology to bridge the gap between digital
+          life and the physical environment.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services / Shop Section -->
+  <section class="shop-section" id="SERVICES">
+    <h2 class="section-title">Our <span class="highlight-text">Services</span></h2>
+
+    <div class="products-grid">
+      <!-- Product 1 -->
+      <div class="product-card">
+        <div class="product-img" style="background-image: url('assets/mango.webp');"></div>
+        <div class="product-info">
+          <h4>Mango Tree</h4>
+          <p class="desc">The "King of Fruits", native to India. Grows in warm regions and produces sweet, juicy fruits.
+          </p>
+          <div class="price-action">
+            <span class="price">$4.50</span>
+            <a href="purchase.html"><button class="btn btn-outline btn-sm">Buy Now</button></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="product-card">
+        <div class="product-img" style="background-image: url('assets/Neem.webp');"></div>
+        <div class="product-info">
+          <h4>Neem Tree</h4>
+          <p class="desc">Fast-growing evergreen known as the village pharmacy for its medicinal properties.</p>
+          <div class="price-action">
+            <span class="price">$4.50</span>
+            <a href="purchase.html"><button class="btn btn-outline btn-sm">Buy Now</button></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="product-card">
+        <div class="product-img" style="background-image: url('assets/banana.jpg');"></div>
+        <div class="product-info">
+          <h4>Banana Tree</h4>
+          <p class="desc">Large, fast-growing plant producing nutritious fruit clusters. Thrives in humid climates.</p>
+          <div class="price-action">
+            <span class="price">$4.50</span>
+            <a href="purchase.html"><button class="btn btn-outline btn-sm">Buy Now</button></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 4 -->
+      <div class="product-card">
+        <div class="product-img" style="background-image: url('assets/turmric.webp');"></div>
+        <div class="product-info">
+          <h4>Turmeric Plant</h4>
+          <p class="desc">Yellow spice plant known for powerful healing and anti-inflammatory properties.</p>
+          <div class="price-action">
+            <span class="price">$4.50</span>
+            <a href="purchase.html"><button class="btn btn-outline btn-sm">Buy Now</button></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 5 -->
+      <div class="product-card">
+        <div class="product-img" style="background-image: url('assets/tulsi.jpg');"></div>
+        <div class="product-info">
+          <h4>Tulsi Plant</h4>
+          <p class="desc">Holy Basil, a sacred plant with medicinal and spiritual value. Boosts immunity.</p>
+          <div class="price-action">
+            <span class="price">$4.50</span>
+            <a href="purchase.html"><button class="btn btn-outline btn-sm">Buy Now</button></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 6 -->
+      <div class="product-card">
+        <div class="product-img" style="background-image: url('assets/money.webp');"></div>
+        <div class="product-info">
+          <h4>Money Plant</h4>
+          <p class="desc">Indoor plant believed to bring prosperity. Grows quickly and purifies air.</p>
+          <div class="price-action">
+            <span class="price">$4.50</span>
+            <a href="purchase.html"><button class="btn btn-outline btn-sm">Buy Now</button></a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h3>Plantation Tracker</h3>
+        <p>Growing a greener world, one tree at a time.</p>
+        <div class="social-icons">
+          <img src="assets/facebook.png" alt="Facebook">
+          <img src="assets/x-icon.png" alt="X">
+          <img src="assets/insta.png" alt="Instagram">
+          <img src="assets/linkdin.png" alt="LinkedIn">
+        </div>
+      </div>
+
+      <div class="footer-links-col">
+        <h5>Quick Links</h5>
+        <a href="#">Plants</a>
+        <a href="#">Seeds</a>
+        <a href="#">Flowers</a>
+        <a href="#">Shipping</a>
+      </div>
+
+      <div class="footer-links-col">
+        <h5>Services</h5>
+        <a href="#">Fast Delivery</a>
+        <a href="#">Organic Plants</a>
+        <a href="#">Customer Care</a>
+      </div>
+
+      <div class="footer-contact">
+        <h5>Contact Us</h5>
+        <p>+91 986543210</p>
+        <p>Plantation.tracker@gmail.com</p>
+        <p>Prayagraj, India</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Created by NOVA GALAXY</p>
+    </div>
+  </footer>
+
+</body>
+
+</html>

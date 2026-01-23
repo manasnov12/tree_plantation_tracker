@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purchase Trees | Plantation Tracker</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/purchase.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="assets/logo.png" alt="Logo" class="logo-img">
+            <span>Plantation Tracker</span>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="material-icons">menu</span>
+        </div>
+    </nav>
+
+    <div class="purchase-wrapper">
+        <div class="purchase-card card-glass">
+            <div class="form-header">
+                <h2>Plant a Tree</h2>
+                <p>Complete the form below to contribute to a greener future.</p>
+            </div>
+
+            <form action="#" method="post" id="purchaseForm">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required placeholder="Enter your username">
+                </div>
+
+                <div class="form-group">
+                    <label for="no_of_trees">Number of Trees</label>
+                    <input type="number" id="no_of_trees" name="number" required placeholder="Quantity" min="1">
+                </div>
+
+                <div class="form-group">
+                    <label for="address">Delivery Address</label>
+                    <textarea id="address" name="address" required placeholder="Full address" rows="3"></textarea>
+                </div>
+
+                <div class="price-summary">
+                    <p>Estimated Cost: <span id="cost">$0.00</span></p>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block">Confirm Purchase</button>
+            </form>
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+    <script src="js/purchase.js"></script>
+</body>
+
+</html>

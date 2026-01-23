@@ -1,0 +1,126 @@
+/* User Profile Styles */
+.user-container {
+    padding: 100px 10% 60px;
+    background-color: var(--bg-light);
+    min-height: 100vh;
+}
+
+.user-header {
+    margin-bottom: 40px;
+    background: var(--white);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: var(--shadow-sm);
+}
+
+.user-profile-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.profile-pic {
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    border: 3px solid var(--accent-color);
+}
+
+.user-welcome h1 {
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+}
+
+.user-welcome p {
+    color: #888;
+}
+
+.stats-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.stat-card {
+    background: var(--white);
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    transition: 0.3s;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.icon-box {
+    width: 60px;
+    height: 60px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+}
+
+.icon-box.green {
+    background-color: var(--primary-light);
+}
+
+.icon-box.orange {
+    background-color: var(--highlight-color);
+}
+
+.icon-box.teal {
+    background-color: #2a9d8f;
+}
+
+.stat-card h3 {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.stat-card p {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--primary-dark);
+}
+
+.address-text {
+    font-size: 0.9rem !important;
+    line-height: 1.4;
+}
+
+.recent-activity h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.activity-list {
+    background: var(--white);
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.activity-item {
+    display: flex;
+    gap: 20px;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.activity-item:last-child {
+    border-bottom: none;
+}
+
+.activity-item .date {
+    font-weight: 600;
+    color: var(--primary-color);
+    width: 60px;
+}

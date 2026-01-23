@@ -1,0 +1,76 @@
+/* Purchase Page Styles */
+.purchase-wrapper {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 20px 60px;
+    /* Offset for navbar */
+    background: linear-gradient(135deg, var(--bg-light) 0%, #e8f5e9 100%);
+    background-image: url('../assets/plant.png');
+    /* Subtle background usage if possible, else pattern */
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: right bottom;
+}
+
+.purchase-card {
+    width: 100%;
+    max-width: 500px;
+    background: var(--white);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: var(--shadow-lg);
+}
+
+.form-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.form-header h2 {
+    color: var(--primary-dark);
+    font-size: 2rem;
+}
+
+.form-header p {
+    color: #666;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--primary-dark);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    transition: 0.3s;
+    background-color: #f9f9f9;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--primary-color);
+    background-color: var(--white);
+    box-shadow: 0 0 0 3px rgba(45, 106, 79, 0.1);
+}
+
+.price-summary {
+    margin: 20px 0;
+    text-align: right;
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: var(--primary-dark);
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Assistant | Plantation Tracker</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/chatbot.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="assets/logo.png" alt="Logo" class="logo-img">
+            <span>Plantation Tracker</span>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="index.html#ABOUT">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <div class="chat-wrapper">
+        <header class="chat-header">
+            <div class="bot-info">
+                <img src="assets/logo.png" alt="Bot Avatar" class="bot-avatar">
+                <div>
+                    <h2>EcoBot Assistant</h2>
+                    <p class="status"><span class="dot"></span> Online</p>
+                </div>
+            </div>
+            <!-- <button class="btn btn-outline btn-sm">Clear Chat</button> -->
+        </header>
+
+        <div class="chat-container">
+            <div class="chat-box ai-message">
+                <img src="assets/logo.png" alt="Bot" class="avatar">
+                <div class="message-content">
+                    <p>Hello! I'm your EcoBot Assistant. Ask me anything about plants, gardening, or our services!</p>
+                </div>
+            </div>
+            <!-- Messages will be injected here via JS -->
+        </div>
+
+        <div class="input-area">
+            <div class="input-wrapper">
+                <button class="icon-btn" id="image-upload" title="Upload Image (Coming Soon)">
+                    <span class="material-icons">add_photo_alternate</span>
+                </button>
+                <input type="text" id="prompt" placeholder="Type your question here...">
+                <button class="send-btn" id="submit">
+                    <span class="material-icons">send</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/chatbot.js"></script>
+</body>
+
+</html>

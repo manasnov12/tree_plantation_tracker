@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration | Offline Demo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2d6a4f;
+            --primary-light: #52b788;
+            --bg: #f8faf9;
+            --text: #081c15;
+            --white: #ffffff;
+            --error: #e63946;
+            --success: #2a9d8f;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 600px;
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            margin-bottom: 2rem;
+        }
+
+        h2 {
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        input {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(45, 106, 79, 0.1);
+        }
+
+        button {
+            width: 100%;
+            padding: 1rem;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 1rem;
+        }
+
+        button:hover {
+            background-color: var(--primary-light);
+        }
+
+        .message {
+            margin-top: 1rem;
+            padding: 0.8rem;
+            border-radius: 8px;
+            text-align: center;
+            display: none;
+        }
+
+        .message.error {
+            background-color: #ffe5e5;
+            color: var(--error);
+            display: block;
+        }
+
+        .message.success {
+            background-color: #e5f9f6;
+            color: var(--success);
+            display: block;
+        }
+
+        .data-section {
+            width: 100%;
+            max-width: 800px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        th {
+            background-color: var(--primary);
+            color: white;
+            text-align: left;
+            padding: 1rem;
+        }
+
+        td {
+            padding: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 1rem;
+            }
+
+            .container {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>User Registration</h2>
+        <form id="registrationForm">
+            <div class="form-group">
+                <label>Email Address</label>
+                <input type="email" id="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label>Phone Number</label>
+                <input type="tel" id="phone" placeholder="Enter your phone number" required>
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" id="password" placeholder="Create a password" required>
+            </div>
+            <div class="form-group">
+                <label>Confirm Password</label>
+                <input type="password" id="confirmPassword" placeholder="Confirm your password" required>
+            </div>
+            <button type="submit">Register Now</button>
+        </form>
+        <div id="msg" class="message"></div>
+    </div>
+
+    <div class="data-section">
+        <h2>Registered Users (Local Storage)</h2>
+        <table id="userTable">
+            <thead>
+                <tr>
+                    <th>Email</th>
+                    <th>Phone Number</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Data will appear here -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        const form = document.getElementById('registrationForm');
+        const msg = document.getElementById('msg');
+        const userTable = document.getElementById('userTable').getElementsByTagName('tbody')[0];
+
+        // 1. Load data from LocalStorage on startup
+        window.onload = () => {
+            displayUsers();
+        };
+
+        // 2. Handle Form Submission
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+
+            // Simple Validation
+            if (password !== confirmPassword) {
+                showMessage("Passwords do not match!", "error");
+                return;
+            }
+
+            // Save to LocalStorage
+            const userData = { email, phone }; // Password is not saved for security demo
+            saveUser(userData);
+
+            showMessage("Registration successful! Data saved locally.", "success");
+            form.reset();
+            displayUsers();
+        });
+
+        // 3. Save User Function
+        function saveUser(user) {
+            let users = JSON.parse(localStorage.getItem('registeredUsers')) || [];
+            users.push(user);
+            localStorage.setItem('registeredUsers', JSON.stringify(users));
+        }
+
+        // 4. Display Users Function
+        function displayUsers() {
+            let users = JSON.parse(localStorage.getItem('registeredUsers')) || [];
+            userTable.innerHTML = ""; // Clear existing
+
+            users.forEach(user => {
+                let row = userTable.insertRow();
+                let cell1 = row.insertCell(0);
+                let cell2 = row.insertCell(1);
+                cell1.textContent = user.email;
+                cell2.textContent = user.phone;
+            });
+        }
+
+        // 5. Message Handler
+        function showMessage(text, type) {
+            msg.textContent = text;
+            msg.className = `message ${type}`;
+            setTimeout(() => {
+                msg.style.display = 'none';
+            }, 3000);
+        }
+    </script>
+</body>
+
+</html>

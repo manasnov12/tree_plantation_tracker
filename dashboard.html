@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Plantation Tracker</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo-area">
+                <img src="assets/logo.png" alt="Logo">
+                <h3>Plantation<br>Tracker</h3>
+            </div>
+
+            <nav class="side-nav">
+                <a href="index.html" class="nav-item">
+                    <span class="material-icons">home</span> Home
+                </a>
+                <a href="#" class="nav-item active">
+                    <span class="material-icons">dashboard</span> Dashboard
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="material-icons">park</span> My Plants
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="material-icons">person</span> Profile
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="material-icons">settings</span> Settings
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <a href="login.html" class="nav-item logout">
+                    <span class="material-icons">logout</span> Logout
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="top-bar">
+                <div class="welcome-text">
+                    <h1>Dashboard Overview</h1>
+                    <p>Welcome back, Green Hero!</p>
+                </div>
+
+                <div class="controls-area">
+                    <div class="filter-group">
+                        <select class="custom-select">
+                            <option>All Users</option>
+                            <option>User 1</option>
+                            <option>User 2</option>
+                        </select>
+                        <select class="custom-select">
+                            <option>All Locations</option>
+                            <option>Loc 1</option>
+                            <option>Loc 2</option>
+                        </select>
+                    </div>
+                    <div class="user-profile">
+                        <img src="assets/user.png.png" alt="User" class="avatar">
+                    </div>
+                </div>
+            </header>
+
+            <!-- KPI Cards -->
+            <div class="kpi-grid">
+                <div class="kpi-card glass-panel">
+                    <div class="icon-bubble green">
+                        <span class="material-icons">park</span>
+                    </div>
+                    <div class="kpi-info">
+                        <h3>3,240</h3>
+                        <p>Total Trees Planted</p>
+                    </div>
+                </div>
+
+                <div class="kpi-card glass-panel">
+                    <div class="icon-bubble orange">
+                        <span class="material-icons">forest</span>
+                    </div>
+                    <div class="kpi-info">
+                        <h3>301</h3>
+                        <p>Active Plantations</p>
+                    </div>
+                </div>
+
+                <div class="kpi-card glass-panel">
+                    <div class="icon-bubble teal">
+                        <span class="material-icons">groups</span>
+                    </div>
+                    <div class="kpi-info">
+                        <h3>302</h3>
+                        <p>Community Members</p>
+                    </div>
+                </div>
+
+                <div class="kpi-card glass-panel">
+                    <div class="icon-bubble yellow">
+                        <span class="material-icons">co2</span>
+                    </div>
+                    <div class="kpi-info">
+                        <h3>1.2T</h3>
+                        <p>CO2 Offset</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Charts Section -->
+            <div class="charts-grid">
+                <!-- Main Growth Chart -->
+                <div class="chart-card glass-panel large">
+                    <div class="card-header">
+                        <h3>Plantation Growth Trends</h3>
+                        <button class="icon-btn"><span class="material-icons">more_horiz</span></button>
+                    </div>
+                    <canvas id="plantationDateTrends"></canvas>
+                </div>
+
+                <!-- Distribution Chart -->
+                <div class="chart-card glass-panel">
+                    <div class="card-header">
+                        <h3>Species Distribution</h3>
+                        <button class="icon-btn"><span class="material-icons">filter_list</span></button>
+                    </div>
+                    <canvas id="treeDistribution1"></canvas>
+                </div>
+
+                <!-- User Stats -->
+                <div class="chart-card glass-panel">
+                    <div class="card-header">
+                        <h3>Top Contributors</h3>
+                    </div>
+                    <canvas id="userWisePlantation"></canvas>
+                </div>
+
+                <!-- Site Stats -->
+                <div class="chart-card glass-panel">
+                    <div class="card-header">
+                        <h3>Site Analysis</h3>
+                    </div>
+                    <canvas id="siteWiseTrees"></canvas>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/dashboard.js"></script>
+</body>
+
+</html>

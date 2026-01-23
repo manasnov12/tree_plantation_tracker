@@ -1,0 +1,113 @@
+/* Services Page Styles */
+.page-header {
+    background-color: var(--primary-dark);
+    color: var(--white);
+    text-align: center;
+    padding: 120px 20px 60px;
+    background-image: linear-gradient(rgba(27, 67, 50, 0.9), rgba(27, 67, 50, 0.8)), url('tree.jpg');
+    /* Different bg if available */
+    background-size: cover;
+    background-position: center;
+}
+
+.services-container {
+    padding: 60px 10%;
+    background-color: var(--bg-light);
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 2rem;
+    color: var(--primary-dark);
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.section-heading::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: var(--highlight-color);
+}
+
+/* Services List */
+.services-list {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-bottom: 80px;
+}
+
+.service-box {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 15px;
+    width: 300px;
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+    transition: 0.3s;
+}
+
+.service-box:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.service-box img {
+    height: 60px;
+    margin-bottom: 20px;
+}
+
+.service-box h3 {
+    margin-bottom: 10px;
+    color: var(--primary-dark);
+}
+
+/* Catalog Grid */
+.catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+/* Reusing product card styles from main.css roughly, but refined here if needed */
+.product-card {
+    background: var(--white);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: 0.3s;
+}
+
+.product-card:hover {
+    box-shadow: var(--shadow-lg);
+}
+
+.product-img {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+}
+
+.product-info {
+    padding: 20px;
+    text-align: center;
+}
+
+.product-info h4 {
+    margin-bottom: 5px;
+    font-size: 1.1rem;
+}
+
+.product-info .price {
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
