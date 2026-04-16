@@ -8,16 +8,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/darkmode.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 <body>
-    <nav class="navbar">
+    <nav class="navbar" id="navbar">
         <div class="logo-container">
             <img src="assets/logo.png" alt="Logo" class="logo-img">
             <span>Plantation Tracker</span>
         </div>
-        <div class="nav-links">
+        <div class="nav-links" id="nav-links">
             <a href="index.html">Home</a>
             <a href="index.html#ABOUT">About</a>
             <a href="contact.html">Contact</a>
@@ -25,6 +26,10 @@
         <div class="menu-toggle" id="mobile-menu">
             <span class="material-icons">menu</span>
         </div>
+        <button class="theme-toggle" aria-label="Toggle Dark Mode">
+            <span class="toggle-icon icon-sun">☀️</span>
+            <span class="toggle-icon icon-moon">🌙</span>
+        </button>
     </nav>
 
     <div class="auth-wrapper">
@@ -53,6 +58,7 @@
             </div>
         </div>
     </div>
+    <script src="js/theme.js"></script>
     <script src="js/main.js"></script>
     <script src="js/login.js"></script>
 </body>

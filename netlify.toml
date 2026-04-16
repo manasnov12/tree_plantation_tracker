@@ -1,0 +1,19 @@
+# =====================================================
+# Netlify Configuration — Tree Plantation Tracker
+# =====================================================
+
+[build]
+  publish = "."
+  functions = "netlify/functions"
+
+# Redirect /api/chat → Netlify function (same URL as Vercel)
+[[redirects]]
+  from = "/api/chat"
+  to = "/.netlify/functions/chat"
+  status = 200
+
+# SPA fallback - serve index.html for unknown routes
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

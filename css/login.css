@@ -1,38 +1,62 @@
 /* Auth specific styles */
+body {
+    background: radial-gradient(ellipse at 70% 30%, #2d6a4f 0%, #1b4332 40%, #0d1f16 100%) !important;
+}
+
 .auth-wrapper {
-    height: 100vh;
+    min-height: 100vh;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(135deg, var(--primary-dark), #000000);
-    background-image: url('../assets/bg.jpg');
-    /* Assuming there is a bg image, if not it will fallback to gradient */
-    background-size: cover;
-    background-position: center;
+    padding: 100px 20px 40px;
+    background: radial-gradient(ellipse at 70% 30%, #2d6a4f 0%, #1b4332 40%, #0d1f16 100%);
     position: relative;
 }
 
+/* Decorative orbs */
 .auth-wrapper::before {
     content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
-    /* Overlay */
+    position: fixed;
+    top: -15%;
+    right: -10%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(255, 183, 3, 0.12) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
 }
+
+.auth-wrapper::after {
+    content: '';
+    position: fixed;
+    bottom: -20%;
+    left: -10%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(82, 183, 136, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+}
+
 
 .auth-card {
     width: 100%;
-    max-width: 400px;
+    max-width: 420px;
     z-index: 10;
-    padding: 40px;
+    padding: 30px;
     color: var(--white);
-    background: rgba(255, 255, 255, 0.1);
-    /* Overriding card-glass for dark theme context */
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-bold);
+}
+
+.auth-card:hover {
+    background: rgba(255, 255, 255, 0.12); /* Prevents the harsh white hover from .card-glass:hover */
 }
 
 .auth-header {
@@ -41,8 +65,9 @@
 }
 
 .auth-header h2 {
-    color: var(--highlight-color);
-    font-size: 2rem;
+    color: var(--accent);
+    font-size: 2.2rem;
+    font-family: var(--font-heading);
 }
 
 .auth-header p {
@@ -51,7 +76,7 @@
 }
 
 .form-group {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .form-group label {
@@ -73,8 +98,9 @@
 }
 
 .form-group input:focus {
-    border-color: var(--highlight-color);
+    border-color: var(--accent);
     background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 15px rgba(255, 183, 3, 0.2);
 }
 
 .btn-block {
@@ -90,7 +116,7 @@
 }
 
 .auth-footer a {
-    color: var(--highlight-color);
+    color: var(--accent);
     font-weight: 600;
 }
 

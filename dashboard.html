@@ -14,6 +14,7 @@
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/darkmode.css">
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 </head>
@@ -49,6 +50,10 @@
                 <a href="login.html" class="nav-item logout">
                     <span class="material-icons">logout</span> Logout
                 </a>
+                <button class="theme-toggle" style="margin: 8px auto 0; display: flex;" aria-label="Toggle Dark Mode">
+                    <span class="toggle-icon icon-sun">☀️</span>
+                    <span class="toggle-icon icon-moon">🌙</span>
+                </button>
             </div>
         </aside>
 
@@ -161,6 +166,7 @@
         </main>
     </div>
 
+    <script src="js/theme.js"></script>
     <script src="js/dashboard.js"></script>
 </body>
 

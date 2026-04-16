@@ -1,0 +1,21 @@
+# =====================================================
+# Tree Plantation Tracker — .gitignore
+# =====================================================
+
+# 🔑 API Key config — NEVER commit this!
+js/config.js
+
+# OS / Editor junk
+.DS_Store
+Thumbs.db
+desktop.ini
+*.log
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# Node (if used later)
+node_modules/
+.env
+.env.local

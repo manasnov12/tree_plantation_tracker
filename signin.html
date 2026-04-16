@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/login.css"> <!-- Reusing login style -->
+    <link rel="stylesheet" href="css/darkmode.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
@@ -25,17 +26,21 @@
         <div class="menu-toggle" id="mobile-menu">
             <span class="material-icons">menu</span>
         </div>
+        <button class="theme-toggle" aria-label="Toggle Dark Mode">
+            <span class="toggle-icon icon-sun">☀️</span>
+            <span class="toggle-icon icon-moon">🌙</span>
+        </button>
     </nav>
 
     <div class="auth-wrapper">
-        <div class="auth-card card-glass" style="max-width: 500px;">
+        <div class="auth-card card-glass">
             <div class="auth-header">
                 <h2>Join the Movement</h2>
                 <p>Create an account to start tracking</p>
             </div>
 
             <form action="#" method="post">
-                <div class="grid-cols-2" style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                <div class="grid-cols-2" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
                     <div class="form-group">
                         <label for="username">Username</label>
                         <input type="text" id="username" name="username" required>
@@ -56,7 +61,7 @@
                     <input type="tel" id="phone" name="phone" required>
                 </div>
 
-                <div class="grid-cols-2" style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                <div class="grid-cols-2" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
                     <div class="form-group">
                         <label for="password">Password</label>
                         <input type="password" id="password" name="password" required>
@@ -75,6 +80,7 @@
             </div>
         </div>
     </div>
+    <script src="js/theme.js"></script>
     <script src="js/main.js"></script>
     <script src="js/signin.js"></script>
 </body>
